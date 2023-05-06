@@ -1,0 +1,457 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list],
+ul,
+ol,
+dl {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+img, picture {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Make images easier to work with */
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  overflow-x: hidden;
+}
+body.overflow {
+  overflow-y: hidden;
+}
+body header {
+  font-family: "Fraunces", serif;
+  display: grid;
+  position: relative;
+}
+body header picture {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+body header nav {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: flex-start;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header nav button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+body header nav .nav {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  width: calc(100% - 2rem);
+  background-color: hsl(0, 0%, 100%);
+  transform: translate(-50%, 70%);
+  border-style: solid;
+  border-width: 1rem 1rem 0 0;
+  border-color: rgb(62, 191, 255) hsl(0, 0%, 100%) transparent transparent;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+}
+body header nav .nav.toggle {
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(50%, 70%);
+}
+body header nav .nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.2rem;
+  padding-block: 2rem;
+}
+body header nav .nav ul li a {
+  font-family: "Barlow", sans-serif;
+  color: hsl(232, 10%, 55%);
+  font-size: 21.6px;
+  padding: 0.7rem 2rem;
+  border-radius: 50vw;
+  transition: 0.3s;
+}
+body header nav .nav ul li a:hover {
+  background-color: #ffe761;
+  transform: scale(0.9);
+}
+body header nav .nav ul li a.contact {
+  font-family: "Fraunces", serif;
+  color: hsl(167, 40%, 24%);
+  background-color: hsl(51, 100%, 49%);
+  padding: 0.5rem 2rem;
+}
+body header nav .nav ul li a.contact:hover {
+  background-color: #ffe761;
+  transform: scale(0.9);
+}
+body header .motto {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: center;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  line-height: 1.2;
+  letter-spacing: 8px;
+  transform: translateY(-70%);
+}
+body header .arrow {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+  transform: translateY(70%);
+}
+body section.testimonials-cont h2 {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 16.2px;
+  color: hsl(210, 4%, 67%);
+  text-align: center;
+  letter-spacing: 4px;
+  padding-block-start: 4rem;
+}
+
+body .info-text {
+  padding: 4rem 2rem;
+}
+body .info-text h2 {
+  font-family: "Fraunces", serif;
+  font-size: 32.4px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: center;
+  color: hsl(212, 27%, 19%);
+}
+body .info-text p {
+  font-family: "Barlow", sans-serif;
+  font-weight: f "Barlow", sans-serif;
+  font-size: 16.2px;
+  line-height: 1.6;
+  text-align: center;
+  color: hsl(232, 10%, 55%);
+  padding-block: 2rem;
+}
+body .info-text .learn {
+  display: block;
+  text-align: center;
+  font-family: "Fraunces", serif;
+  font-size: 16.2px;
+  font-weight: 900;
+  color: hsl(212, 27%, 19%);
+  position: relative;
+}
+body .info-text .learn::before {
+  position: absolute;
+  z-index: -1;
+  content: "LEARN MORE x";
+  color: transparent;
+  background-color: var(--underline);
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10%;
+  border-radius: 50vw;
+  filter: blur(3px);
+  transition: 0.3s;
+}
+body .info-text .learn:hover::before {
+  filter: blur(0);
+  height: 20%;
+}
+body .img-grid {
+  display: grid;
+}
+body .img-grid img {
+  grid-column: 1/1;
+  grid-row: 1/1;
+}
+body .img-grid article {
+  grid-column: 1/1;
+  grid-row: 1/1;
+  align-self: flex-end;
+  padding-block: 0;
+}
+body .img-grid article h2 {
+  color: var(--clr);
+}
+body .img-grid article p {
+  font-size: 13.68px;
+  color: var(--clr);
+}
+body .testimonial-grid {
+  display: grid;
+  justify-items: center;
+  padding: 4rem 2rem;
+}
+body .testimonial-grid .img {
+  width: 25%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+body .testimonial-grid .testimony {
+  text-align: center;
+}
+body .testimonial-grid .testimony .text {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-size: 16.2px;
+  line-height: 1.8;
+  color: hsl(213, 9%, 39%);
+  padding-block: 2rem;
+}
+body .testimonial-grid .testimony .name {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 18px;
+  color: hsl(212, 27%, 19%);
+}
+body .testimonial-grid .testimony .profession {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-size: 12.6px;
+  color: hsl(210, 4%, 67%);
+  padding-block-start: 1rem;
+}
+body .img-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+body .img-flex div {
+  flex-basis: 50%;
+}
+body .footer-grid {
+  display: grid;
+  background-color: #9ccec4;
+  padding-inline: 3rem;
+}
+body .footer-grid .logo {
+  padding-block: 4rem 3rem;
+  justify-self: center;
+}
+body .footer-grid .nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+body .footer-grid .nav ul li a {
+  color: hsl(168, 34%, 41%);
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-size: 19.8px;
+  transition: 0.3s;
+}
+body .footer-grid .nav ul li a:hover {
+  color: hsl(0, 0%, 100%);
+}
+body .footer-grid .social-links {
+  justify-self: center;
+  padding-block: 6rem;
+}
+body .footer-grid .social-links ul {
+  display: flex;
+  gap: 1rem;
+}
+body .footer-grid .social-links ul path:hover {
+  transition: 0.3s;
+  fill: hsl(0, 0%, 100%);
+}
+
+@media (min-width: 1125px) {
+  body header nav {
+    padding: 0rem 2rem;
+  }
+  body header nav button {
+    display: none;
+  }
+  body header nav .nav {
+    position: unset;
+    width: unset;
+    border: none;
+    background-color: unset;
+  }
+  body header nav .nav.toggle {
+    visibility: visible;
+    opacity: 1;
+    transform: unset;
+  }
+  body header nav .nav ul {
+    flex-direction: unset;
+    padding-block: 1rem;
+  }
+  body header nav .nav ul li a {
+    color: hsl(0, 0%, 100%);
+  }
+  body header nav .nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  body header nav .nav ul li a.contact {
+    color: hsl(167, 40%, 24%);
+    background-color: hsl(0, 0%, 100%);
+  }
+  body header nav .nav ul li a.contact:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: hsl(0, 0%, 100%);
+  }
+  body header .motto {
+    font-size: 54px;
+    letter-spacing: 8px;
+    transform: translateY(-300%);
+  }
+  body header .arrow {
+    transform: translateY(0%);
+  }
+  body section.information {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  body section.information * {
+    flex-basis: 50%;
+  }
+  body section.testimonials-cont {
+    padding-block: 4rem;
+  }
+  body section.testimonials-cont .testimonials {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 1125px) {
+  body .info-text {
+    display: grid;
+    place-content: center;
+    padding-inline: 10.5vw;
+  }
+  body .info-text h2 {
+    text-align: start;
+  }
+  body .info-text p {
+    text-align: start;
+  }
+  body .info-text .learn {
+    text-align: start;
+  }
+  body .info-text .learn::before {
+    position: absolute;
+    z-index: -1;
+    content: "LEARN MORE x";
+    color: transparent;
+    background-color: var(--underline);
+    bottom: 3px;
+    left: -5px;
+    height: 10%;
+    transform: translateX(0);
+    border-radius: 50vw;
+    filter: blur(3px);
+    transition: 0.3s;
+  }
+  body .img-grid {
+    grid-template-rows: 1fr 0.4fr;
+  }
+  body .img-grid img {
+    grid-row: 1/3;
+  }
+  body .img-grid article {
+    grid-row: 2/3;
+    align-self: flex-start;
+    padding-inline: 14.5vw;
+  }
+  body .img-grid article h2 {
+    text-align: center;
+  }
+  body .img-grid article p {
+    text-align: center;
+  }
+  body .testimonial-grid {
+    width: 26vw;
+  }
+  body .img-flex {
+    flex-wrap: unset;
+  }
+  body .img-flex div {
+    flex-basis: 25%;
+  }
+  body .footer-grid {
+    justify-content: center;
+  }
+  body .footer-grid .nav ul {
+    gap: 2rem;
+  }
+}/*# sourceMappingURL=style.min.css.map */
